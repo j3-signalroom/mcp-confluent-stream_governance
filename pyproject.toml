@@ -13,7 +13,10 @@ maintainers = [
 dependencies = [
     "cc-clients-python-lib>=0.30.3.0",
     "dotenv>=0.9.9",
+    "fastapi>=0.121.1",
     "mcp>=1.21.0",
+    "pydantic>=2.12.4",
+    "sse-starlette>=3.0.3",
 ]
 
 [tool.setuptools]
