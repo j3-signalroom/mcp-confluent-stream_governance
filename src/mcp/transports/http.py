@@ -1,20 +1,19 @@
-import logging
 from typing import Dict, Optional
 from uuid import uuid4
-from fastapi import FastAPI, Header, Request, Response, status
+from fastapi import Header, Request, status
 from fastapi.responses import JSONResponse
 from mcp.server import McpServer
 from mcp.server.streamable_http import StreamableHTTPServerTransport
-
-# Assuming these imports exist in your Python project
-from src.logger import logger
-from src.mcp.transports.ping import ping_handler, PingRequest, PingResponse
-from src.mcp.transports.server import HttpServer
-from src.mcp.transports.types import Transport
-
-# Pydantic models for request/response schemas
+from mcp.transports.ping import ping_handler, PingRequest, PingResponse
+from mcp.transports.server import HttpServer
+from mcp.transports.types import Transport
 from pydantic import BaseModel
 
+from utilities import setup_logging
+
+
+# Setup module logging
+logger = setup_logging()
 
 class McpSession(BaseModel):
     sessionId: str

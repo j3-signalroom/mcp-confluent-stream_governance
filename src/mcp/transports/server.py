@@ -2,14 +2,16 @@ import asyncio
 from typing import Optional
 import uvicorn
 from fastapi import FastAPI
-from fastapi.openapi.docs import get_swagger_ui_html
 from contextlib import asynccontextmanager
+from dotenv import load_dotenv
+import os
+from mcp.transports.types import ServerConfig
 
-# Assuming these imports exist in your Python project
-from src.env import env
-from src.logger import logger
-from src.mcp.transports.types import ServerConfig
+from utilities import setup_logging
 
+
+# Setup module logging
+logger = setup_logging()
 
 class HttpServer:
     def __init__(self):
@@ -22,6 +24,9 @@ class HttpServer:
         """Prepare the FastAPI application with OpenAPI/Swagger configuration"""
         if self._is_swagger_configured:
             return
+        
+        # Load environment variables from .env file
+        load_dotenv()
 
         # Create FastAPI instance with OpenAPI configuration
         self._app = FastAPI(
@@ -30,7 +35,7 @@ class HttpServer:
             version="1.0.0",
             servers=[
                 {
-                    "url": f"http://{env.HTTP_HOST}:{env.HTTP_PORT}",
+                    "url": f"http://{os.getenv('HTTP_HOST')}:{os.getenv('HTTP_PORT')}",
                     "description": "Local development server",
                 }
             ],
@@ -169,7 +174,7 @@ class HttpServerWithLifespan:
         # Configure servers dynamically
         self._app.servers = [
             {
-                "url": f"http://{env.HTTP_HOST}:{env.HTTP_PORT}",
+                "url": f"http://{os.getenv('HTTP_HOST')}:{os.getenv('HTTP_PORT')}",
                 "description": "Local development server",
             }
         ]

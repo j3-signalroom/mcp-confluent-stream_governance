@@ -1,7 +1,12 @@
 from mcp.server import McpServer
 from mcp.server.stdio import StdioServerTransport
-from src.logger import logger
-from src.mcp.transports.types import Transport
+from mcp.transports.types import Transport
+
+from utilities import setup_logging
+
+
+# Setup module logging
+logger = setup_logging()
 
 
 class StdioTransport(Transport):

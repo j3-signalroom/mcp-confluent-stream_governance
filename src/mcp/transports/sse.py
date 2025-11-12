@@ -1,22 +1,23 @@
-import logging
-from typing import Dict, Any, Optional
-from fastapi import Query, Request, Response, status
+from typing import Dict, Optional
+from fastapi import Query, Request, status
 from fastapi.responses import JSONResponse
 from sse_starlette.sse import EventSourceResponse
 from pydantic import BaseModel
-
 from mcp.server import McpServer
 from mcp.server.sse import SSEServerTransport
-
-# Assuming these imports exist in your Python project
-from src.logger import logger
-from src.mcp.transports.ping import (
+from mcp.transports.ping import (
     ping_handler,
     PingRequest,
     PingResponse,
 )
-from src.mcp.transports.server import HttpServer
-from src.mcp.transports.types import Transport
+from mcp.transports.server import HttpServer
+from mcp.transports.types import Transport
+
+from utilities import setup_logging
+
+
+# Setup module logging
+logger = setup_logging()
 
 
 class SseError(BaseModel):

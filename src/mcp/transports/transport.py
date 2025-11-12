@@ -1,17 +1,17 @@
-import logging
 from typing import Dict, List, Optional
 import asyncio
-from enum import Enum
-
 from mcp.server import McpServer
-
-# Assuming these imports exist in your Python project
-from src.logger import logger
 from mcp.transports.http import HttpTransport
 from mcp.transports.server import HttpServer
 from mcp.transports.sse import SseTransport
 from mcp.transports.stdio import StdioTransport
 from mcp.transports.types import Transport, TransportType
+
+from utilities import setup_logging
+
+
+# Setup module logging
+logger = setup_logging()
 
 
 class TransportManager:
