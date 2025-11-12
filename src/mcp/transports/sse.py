@@ -16,6 +16,14 @@ from mcp.transports.types import Transport
 from utilities import setup_logging
 
 
+__copyright__  = "Copyright (c) 2025 Jeffrey Jonathan Jennings"
+__credits__    = ["Jeffrey Jonathan Jennings"]
+__license__    = "MIT"
+__maintainer__ = "Jeffrey Jonathan Jennings"
+__email__      = "j3@thej3.com"
+__status__     = "dev"
+
+
 # Setup module logging
 logger = setup_logging()
 
@@ -26,7 +34,34 @@ class SseError(BaseModel):
 
 
 class SseTransport(Transport):
-    """Server-Sent Events transport for MCP"""
+    """
+    SSE = Server-Sent Events
+    It's a web standard for one-way, real-time streaming from server to client over HTTP. Think of it as a lightweight
+    alternative to WebSockets when you only need server-to-client communication.
+
+    How It Works
+    Client                    Server
+    |                         |
+    |---HTTP GET request----->|
+    |                         |
+    |<---event: data chunk 1--|
+    |<---event: data chunk 2--|
+    |<---event: data chunk 3--|
+    |         ...             |
+    |<---event: done----------|
+    |                         |
+
+    >>> Opens a single long-lived HTTP connection
+    >>> Server pushes data as text/event-stream
+    >>> Client receives events in real-time
+    >>> Automatically reconnects if connection drops
+
+    MCP Protocol Uses SSE:
+    MCP servers can stream responses back to clients using SSE, which is crucial for:
+    >>> Long-running tool executions
+    >>> Progress updates
+    >>> Streaming large datasets
+    """
 
     def __init__(
         self,
