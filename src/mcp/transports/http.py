@@ -9,11 +9,7 @@ from mcp.transports.server import HttpServer
 from mcp.transports.types import Transport
 from pydantic import BaseModel
 
-from utilities import setup_logging
-
-
-# Setup module logging
-logger = setup_logging()
+from logger import logger
 
 class McpSession(BaseModel):
     sessionId: str

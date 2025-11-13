@@ -7,11 +7,7 @@ from mcp.transports.sse import SseTransport
 from mcp.transports.stdio import StdioTransport
 from mcp.transports.types import Transport, TransportType
 
-from utilities import setup_logging
-
-
-# Setup module logging
-logger = setup_logging()
+from logger import logger
 
 
 class TransportManager:
