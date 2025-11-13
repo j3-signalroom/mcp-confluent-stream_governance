@@ -11,5 +11,5 @@ __status__     = "dev"
 
 
 # Logging configuration
-DEFAULT_TOOL_LOG_FILE: Final[str] = "mcp-confluent-stream_governance.log"
+DEFAULT_TOOL_LOG_FILE: Final[str] = "mcp-confluent_cloud.log"
 DEFAULT_TOOL_LOG_FORMAT: Final[str] = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

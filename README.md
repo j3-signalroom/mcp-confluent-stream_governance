@@ -1,4 +1,4 @@
-# MCP Confluent Stream Governance
+# MCP Confluent Cloud
 
 ## Resources
 [Model Context Protocol Sp](https://modelcontextprotocol.io/docs/getting-started/intro)
