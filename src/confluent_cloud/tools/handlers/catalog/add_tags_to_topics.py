@@ -3,8 +3,8 @@ from pydantic import BaseModel, Field, HttpUrl
 from mcp.types import CallToolResult
 
 from client_manager import ClientManager
-from confluent.tools.base_tools import BaseToolHandler, ToolConfig
-from confluent.tools.tool_name import ToolName
+from confluent_cloud.tools.base_tools import BaseToolHandler, ToolConfig
+from confluent_cloud.tools.tool_name import ToolName
 from env_schema import EnvVar
 from env import env
 
