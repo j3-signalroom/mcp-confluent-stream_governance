@@ -5,7 +5,6 @@ from mcp.types import CallToolResult
 from client_manager import ClientManager
 from confluent_cloud.tools.base_tools import BaseToolHandler, ToolConfig
 from confluent_cloud.tools.tool_name import ToolName
-from env_schema import EnvVar
 from env import env
 
 
@@ -117,7 +116,7 @@ class AddTagToTopicHandler(BaseToolHandler):
             input_schema=AddTagToTopicArguments.model_json_schema(),
         )
 
-    def get_required_env_vars(self) -> List[EnvVar]:
+    def get_required_env_vars(self) -> List[str]:
         """
         Get required environment variables for this tool
         
