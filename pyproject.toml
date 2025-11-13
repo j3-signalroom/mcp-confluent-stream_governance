@@ -1,7 +1,7 @@
 [project]
-name = "mcp-confluent-stream-governance"
+name = "mcp-confluent_cloud"
 version = "0.01.00.000"
-description = "MCP Confluent Stream Governance"
+description = "MCP Confluent Cloud"
 readme = "README.md"
 requires-python = ">=3.13"
 authors = [
@@ -11,11 +11,11 @@ maintainers = [
     {name = "Jeffrey Jonathan Jennings (J3)", email = "j3@thej3.com"},
 ]
 dependencies = [
-    "dotenv>=0.9.9",
     "fastapi>=0.121.1",
     "httpx>=0.28.1",
     "mcp>=1.21.0",
     "pydantic>=2.12.4",
+    "python-dotenv>=1.2.1",
     "requests>=2.32.5",
     "sse-starlette>=3.0.3",
     "urllib3>=2.5.0",
@@ -35,7 +35,7 @@ datefmt = "%Y-%m-%d %H:%M:%S"
 
 [tool.logging.handlers.file]
 class = "logging.FileHandler"
-filename = "mcp-confluent-stream_governance.log"
+filename = "mcp-confluent_cloud.log"
 formatter = "default"
 level = "INFO"
 mode = "w"
@@ -51,7 +51,7 @@ handlers = ["file", "console"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
-log_file = "mcp-confluent-stream_governance.log"
+log_file = "mcp-confluent_cloud.log"
 log_file_level = "INFO"
 log_file_format = "%(asctime)s - %(levelname)s - %(funcName)s - %(message)s"
 log_file_date_format = "%Y-%m-%d %H:%M:%S"
