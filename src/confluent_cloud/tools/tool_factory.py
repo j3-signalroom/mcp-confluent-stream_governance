@@ -2,11 +2,11 @@ from typing import ClassVar
 from enum import Enum
 
 from .base_tools import ToolHandler, ToolConfig
-from .handlers.catalog.add_tags_to_topics import AddTagToTopicHandler
-from .handlers.catalog.create_topic_tags import CreateTopicTagsHandler
-from .handlers.catalog.delete_tag import DeleteTagHandler
-from .handlers.catalog.list_tags import ListTagsHandler
-from .handlers.catalog.remove_tag_from_entity import RemoveTagFromEntityHandler
+from .handlers.catalog.add_tags_to_topics_handler import AddTagToTopicHandler
+from .handlers.catalog.create_topic_tags_handler import CreateTopicTagsHandler
+from .handlers.catalog.delete_tag_handler import DeleteTagHandler
+from .handlers.catalog.list_tags_handler import ListTagsHandler
+from .handlers.catalog.remove_tag_from_entity_handler import RemoveTagFromEntityHandler
 from .handlers.clusters.list_clusters_handler import ListClustersHandler
 from .handlers.connect.create_connector_handler import CreateConnectorHandler
 from .handlers.connect.delete_connector_handler import DeleteConnectorHandler
