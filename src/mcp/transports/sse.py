@@ -13,7 +13,7 @@ from mcp.transports.ping import (
 from mcp.transports.server import HttpServer
 from mcp.transports.types import Transport
 
-from utilities import setup_logging
+from logger import logger
 
 
 __copyright__  = "Copyright (c) 2025 Jeffrey Jonathan Jennings"
@@ -22,10 +22,6 @@ __license__    = "MIT"
 __maintainer__ = "Jeffrey Jonathan Jennings"
 __email__      = "j3@thej3.com"
 __status__     = "dev"
-
-
-# Setup module logging
-logger = setup_logging()
 
 
 class SseError(BaseModel):

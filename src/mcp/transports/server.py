@@ -7,11 +7,8 @@ from dotenv import load_dotenv
 import os
 from mcp.transports.types import ServerConfig
 
-from utilities import setup_logging
+from logger import logger
 
-
-# Setup module logging
-logger = setup_logging()
 
 class HttpServer:
     def __init__(self):
