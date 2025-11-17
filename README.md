@@ -1,4 +1,5 @@
 # MCP Confluent Cloud
+An Model Context Protocol (MCP) server, acts as a standardized way for AI models to securely access and interact with external data and tools, such as files, databases, and APIs.  This allows Large Language Models (LLMs) to provice up-to-date, real-world information instead of relying solely on their training data.  It functions as a universal adapter that enables AI applcations to retrieve live context and perform actions in a secure and consistent manner.
 
 ## Helpful Resources
 
@@ -9,6 +10,8 @@
 
 ### Documentation
 [What is the Model Context Protocol (MCP)?](https://modelcontextprotocol.io/docs/getting-started/intro)
+
+[Google Cloud: What is the Model Context Protocol?](https://cloud.google.com/discover/what-is-model-context-protocol#what-is-the-mcp-and-how-does-it-work)
 
 ### Code Repositories
 [MCP Python SDK GitHub Repository](https://github.com/modelcontextprotocol/python-sdk)
