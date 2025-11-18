@@ -3,7 +3,7 @@ name = "mcp-confluent_cloud"
 version = "0.01.00.000"
 description = "MCP Confluent Cloud"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 authors = [
     {name = "Jeffrey Jonathan Jennings (J3)", email = "j3@thej3.com"},
 ]
