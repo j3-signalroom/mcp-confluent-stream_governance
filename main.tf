@@ -1,0 +1,20 @@
+terraform {
+    cloud {
+      organization = "signalroom"
+
+        workspaces {
+            name = "mcp-server-confluent-cloud"
+        }
+  }
+
+  required_providers {
+        aws = {
+            source  = "hashicorp/aws"
+            version = "6.21.0"
+        }
+        confluent = {
+            source  = "confluentinc/confluent"
+            version = "2.51.0"
+        }
+    }
+}
