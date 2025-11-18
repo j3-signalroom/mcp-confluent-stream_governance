@@ -86,29 +86,3 @@ variable "aws_log_retention_in_days" {
     }
 }
 
-variable "drop_flink_statements" {
-    description = "A list of the drop Flink SQL statements."
-    type        = list(object({
-        id   = number
-        file = string
-    }))
-    default     = [
-        {id = 1, file = "dt_stock_trades_with_totals"}
-    ]
-}
-
-variable "create_set_1_flink_statements" {
-    description = "A list of the create set 1 Flink SQL statements."
-    type        = list(object({
-        id   = number
-        file = string
-    }))
-    default     = [
-        {id = 1, file = "ctas_stock_trades_with_totals"}
-    ]
-}
-
-variable "admin_service_user_secrets_root_path" {
-  description = "The root path for the admin service user secrets in AWS Secrets Manager."
-  type        = string
-}

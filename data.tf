@@ -2,14 +2,6 @@ data "aws_caller_identity" "current" {}
 
 data "aws_region" "current" {}
 
-data "aws_secretsmanager_secret" "admin_user" {
-  name = var.admin_service_user_secrets_root_path
-}
-
-data "aws_secretsmanager_secret_version" "admin_user" {
-  secret_id = data.aws_secretsmanager_secret.admin_user.id
-}
-
 locals {
   cloud                           = "AWS"
   secrets_insert                  = "mcp_server"
