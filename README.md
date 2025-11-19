@@ -11,6 +11,8 @@ An Model Context Protocol (MCP) server, acts as a standardized way for AI models
 
 [Why MCP really is a big deal | Model Context Protocol with Tim Berglund](https://www.youtube.com/watch?v=FLpS7OfD5-s)
 
+[The Missing Protocol: How MCP Bridges LLMs and Data Streams](https://speaking.gamov.io/RKUlRY/the-missing-protocol-how-mcp-bridges-llms-and-data-streams)
+
 ### Documentation
 [What is the Model Context Protocol (MCP)?](https://modelcontextprotocol.io/docs/getting-started/intro)
 
