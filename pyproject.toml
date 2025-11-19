@@ -1,7 +1,7 @@
 [project]
 name = "mcp-confluent_cloud"
 version = "0.01.00.000"
-description = "MCP Confluent Cloud"
+description = "MCP Confluent Cloud (GIL-free Python)"
 readme = "README.md"
 requires-python = ">=3.14"
 authors = [
