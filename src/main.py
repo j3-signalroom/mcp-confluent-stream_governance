@@ -16,9 +16,9 @@ from src.cli import (
     parse_cli_args,
 )
 from confluent_cloud.client_manager import DefaultClientManager, ClientManagerConfig
-from src.confluent.tools.base_tools import ToolHandler
-from src.confluent.tools.tool_factory import ToolFactory
-from src.confluent.tools.tool_name import ToolName
+from confluent_cloud.tools.base_tools import ToolHandler
+from confluent_cloud.tools.tool_factory import ToolFactory
+from confluent_cloud.tools.tool_name import ToolName
 from env import init_env
 from logger import logger, set_log_level
 from mcp.transports import TransportManager
