@@ -15,8 +15,4 @@ locals {
   # IAM Role names and ARNs
   tableflow_s3_glue_role_name     = "tableflow_s3_glue_role"
   tableflow_s3_glue_role_arn      = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/${local.tableflow_s3_glue_role_name}"
-
-  # Tableflow Topics S3 Base Path
-  part_before_v1                = split("/v1/", confluent_tableflow_topic.stock_trades.table_path)
-  tableflow_topics_s3_base_path = "${local.part_before_v1[0]}/v1/"
 }
