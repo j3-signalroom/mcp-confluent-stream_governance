@@ -4,6 +4,26 @@ An Model Context Protocol (MCP) server, acts as a standardized way for AI models
 
 ## Let's Get Started!
 
+What is the GIL?
+Many of you will be aware of the Global Interpreter Lock (GIL) in Python. The GIL is a mutex—a locking mechanism—used to synchronise access to resources, and in Python, ensures that only one thread is executing bytecode at a time.
+
+On the one hand, this has several advantages, including making it easier to perform thread and memory management, avoiding race conditions, and integrating Python with C/C++ libraries. 
+
+On the other hand, the GIL can stifle parallelism. With the GIL in place, true parallelism for CPU-bound tasks across multiple CPU cores within a single Python process is not possible.
+
+Why this matters
+In a word, “performance”.
+
+Because free-threaded execution can use all the available cores on your system simultaneously, code will often run faster. As data scientists and ML or data engineers, this applies not only to your code but also to the code that builds the systems, frameworks, and libraries that you rely on.
+
+Many machine learning and data science tasks are CPU-intensive, particularly during model training and data preprocessing. The removal of the GIL could lead to significant performance improvements for these CPU-bound tasks.
+
+A lot of popular libraries in Python face constraints because they have had to work around the GIL. Its removal could lead to:-
+
+Simplified and potentially more efficient implementations of these libraries
+New optimisation opportunities in existing libraries
+Development of new libraries that can take full advantage of parallel processing
+
 ## Helpful Resources
 
 ### Videos

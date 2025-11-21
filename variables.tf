@@ -52,3 +52,13 @@ variable "number_of_api_keys_to_retain" {
         error_message = "Number of API keys to retain, `number_of_api_keys_to_retain`, must be greater than or equal to 2."
     }
 }
+
+variable "private_subnet_ids" {
+  description = "List of private subnet IDs for the ECS service."
+  type        = list(string)
+}
+
+variable "vpc_id" {
+  description = "The VPC ID where the ECS service will be deployed."
+  type        = string
+}
