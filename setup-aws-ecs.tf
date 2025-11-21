@@ -1,4 +1,3 @@
-# main.tf
 resource "aws_ecs_cluster" "mcp_cluster" {
   name = "mcp-server-cluster"
 
@@ -9,51 +8,29 @@ resource "aws_ecs_cluster" "mcp_cluster" {
 }
 
 resource "aws_ecs_task_definition" "mcp_task" {
-  family                   = "mcp-server-task"
+  family                   = "mcp-server"
+  network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  network_mode            = "awsvpc"
-  cpu                     = "256"
-  memory                  = "512"
-  execution_role_arn      = aws_iam_role.ecs_execution_role.arn
-  task_role_arn           = aws_iam_role.ecs_task_role.arn
+  cpu                      = 256
+  memory                   = 512
+  execution_role_arn       = aws_iam_role.ecs_execution_role.arn
 
-  container_definitions = jsonencode([
-    {
-      name      = "mcp-server"
-      image     = "${aws_ecr_repository.mcp_repo.repository_url}:latest"
-      essential = true
-      
-      portMappings = [
-        {
-          containerPort = 8080
-          protocol      = "tcp"
-        }
-      ]
-
-      environment = [
-        {
-          name  = "ENV"
-          value = "production"
-        }
-      ]
-
-      secrets = [
-        {
-          name      = "API_KEY"
-          valueFrom = aws_secretsmanager_secret.mcp_api_key.arn
-        }
-      ]
-
-      logConfiguration = {
+  container_definitions = jsonencode([{
+    name  = "mcp-server"
+    image = "${aws_ecr_repository.app.repository_url}:latest"
+    portMappings = [{
+      containerPort = 8000
+      protocol      = "tcp"
+    }]
+    logConfiguration = {
         logDriver = "awslogs"
         options = {
           "awslogs-group"         = aws_cloudwatch_log_group.mcp_logs.name
-          "awslogs-region"        = "us-east-1"
+          "awslogs-region"        = var.aws_region
           "awslogs-stream-prefix" = "ecs"
         }
       }
-    }
-  ])
+  }])
 }
 
 resource "aws_ecs_service" "mcp_service" {

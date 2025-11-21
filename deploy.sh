@@ -169,7 +169,7 @@ else
     # Force the delete of the AWS CloudWatch Log Group
     aws logs delete-log-group --log-group-name /aws/lambda/mcp_server || true
 
-    # Using the kafka_cluster_id to delete the AWS Glue Database and Tables created 
+    # Using the kafka_cluster_id to delete the AWS Glue Tables and Database created 
     # for the Kafka Cluster
     if [ ! -z "$kafka_cluster_id" ]
     then
